@@ -1,0 +1,54 @@
+<style type="text/css">
+  #they-like-you-too { display: none; }
+</style>
+
+<h1>Browse compatible users</h1>
+
+<div class="row">
+  <div class="col-sm-4">
+  <% if @potential_match %>
+    <h2 id="they-like-you-too">You like each other!</h2>
+
+    <h2><%= @potential_match.login %></h2>
+    <h4><%= @potential_match.gender.capitalize %></h4>
+    <h4><%= @potential_match.age %> yrs old</h4>
+
+    <div id="forms">
+      <%= form_tag :likes, id: "add-match-form" do %>
+        <%= hidden_field_tag :id, @user.id %>
+        <%= hidden_field_tag :match_id, @potential_match.id %>
+        <div class="form-group">
+          <%= submit_tag "YES", class: "btn btn-primary btn-block" %>
+        </div>
+      <% end %>
+
+      <%= form_tag :like, method: :delete do %>
+        <%= hidden_field_tag :id, @user.id %>
+        <%= hidden_field_tag :match_id, @potential_match.id %>
+        <div class="form-group">
+          <%= submit_tag "NO", class: "btn btn-default btn-block" %>
+        </div>
+      <% end %>
+    </div>
+
+    <% if @user.likes_me? @potential_match %>
+      <script type="text/javascript">
+        $('#add-match-form').on('submit', function(event) {
+          var form = this;
+          event.preventDefault();
+          $('#they-like-you-too').fadeIn('fast', function() {
+            $('#forms').hide();
+            setTimeout(function() {
+              form.submit();
+            }, 1500);
+          });
+        });
+      </script>
+    <% end %>
+
+  <% else %>
+    <h4>No more compatible users :-(</h4>
+  <% end %>
+
+  </div>
+</div>

@@ -1,0 +1,89 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+jen_straight_thirties:
+  login: jen_straight_thirties
+  gender: female
+  gender_interest: male
+  age: 35
+  age_interest_min: 33
+  age_interest_max: 37
+
+jack_straight_thirties:
+  login: jack_straight_thirties
+  gender: male
+  gender_interest: female
+  age: 37
+  age_interest_min: 35
+  age_interest_max: 39
+
+ron_gay_twenties:
+  login: ron_gay_twenties
+  gender: male
+  gender_interest: male
+  age: 24
+  age_interest_min: 22
+  age_interest_max: 26
+
+rick_gay_twenties:
+  login: rick_gay_twenties
+  gender: male
+  gender_interest: male
+  age: 25
+  age_interest_min: 23
+  age_interest_max: 27
+
+barbara_straight_twenties:
+  login: barbara_straight_twenties
+  gender: female
+  gender_interest: male
+  age: 26
+  age_interest_min: 24
+  age_interest_max: 28
+
+betty_straight_twenties:
+  login: betty_straight_twenties
+  gender: female
+  gender_interest: male
+  age: 21
+  age_interest_min: 19
+  age_interest_max: 23
+
+harry_straight_thirties:
+  login: harry_straight_thirties
+  gender: male
+  gender_interest: female
+  age: 35
+  age_interest_min: 33
+  age_interest_max: 37
+
+howard_straight_thirties:
+  login: howard_straight_thirties
+  gender: male
+  gender_interest: female
+  age: 35
+  age_interest_min: 33
+  age_interest_max: 37
+
+mark_straight_thirties:
+  login: mark_straight_thirties
+  gender: male
+  gender_interest: female
+  age: 35
+  age_interest_min: 33
+  age_interest_max: 37
+
+richard_straight_thirties:
+  login: richard_straight_thirties
+  gender: male
+  gender_interest: female
+  age: 35
+  age_interest_min: 33
+  age_interest_max: 37
+
+derek_straight_thirties:
+  login: derek_straight_thirties
+  gender: male
+  gender_interest: female
+  age: 35
+  age_interest_min: 33
+  age_interest_max: 37

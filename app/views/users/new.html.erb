@@ -1,0 +1,55 @@
+<h1>Sign up for TinyTinder</h1>
+
+<div class="row">
+  <div class="col-sm-4">
+  <% if @user.errors.any? %>
+    <div class="alert alert-danger">
+      <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= form_for @user do |f| %>
+    <fieldset>
+      <legend>My account</legend>
+
+      <div class="form-group">
+        <%= f.label :login, class: 'form-label' %>
+        <%= f.text_field :login, class: "form-control" %>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>About me</legend>
+      <div>
+        <%= f.label :gender, 'I’m ' %>
+        <%= f.select :gender, [['a woman', 'female'], ['a man', 'male']] %>
+      </div>
+
+      <div>
+        <%= f.label :gender_interest, 'I’m looking for ' %>
+        <%= f.select :gender_interest, [['a man', 'male'], ['a woman', 'female'], ['either', 'both']] %>
+      </div>
+
+      <div>
+        <%= f.label :age, 'I’m '%>
+        <%= f.select :age, 18..81, selected: 30 %>
+        <strong> years old</strong>
+      </div>
+
+      <div>
+        <%= f.label :age_interest, 'I’d like my date to be between ' %>
+        <%= f.select :age_interest, ['18 - 24', '25 - 29', '30 - 34', '35 - 39', '40 - 44', '45 - 49', '50 - 59', '60 - 69', '70 - 79'], selected: '30 - 34' %>
+        <strong> years old</strong>
+      </div>
+    </fieldset>
+    <hr>
+    <div class="form-group">
+      <%= f.submit 'Sign up', class: "btn btn-primary btn-block" %>
+    </div>
+  <% end %>
+
+  </div>
+</div>
